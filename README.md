@@ -1,6 +1,6 @@
 # pnutsay
 
-This is a wrapper for cowsay dedicated to pnut.io, made during the 2018/05/05 hackathon.
+This is a wrapper for [cowsay](https://en.wikipedia.org/wiki/Cowsay) dedicated to [pnut.io](https://pnut.io), made during the [2018/05/05 hackathon](https://wiki.pnut.io/5_May_2018).
 
 ## Install
 
