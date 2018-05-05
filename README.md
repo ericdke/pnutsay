@@ -35,3 +35,7 @@ Some applications add a space character at the end of the text when pasted, plea
     pnutsay -p "Hello from pnutsay, guys\!"
 
 ![pnutsay](https://monosnap.com/image/5fNPlAf41BmgXNhw30TInUfKkDRd7q.png)
+
+## Licence
+
+The content of this repository is licenced under the MIT licence.
