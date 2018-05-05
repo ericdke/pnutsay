@@ -1,0 +1,76 @@
+#!/bin/bash
+# pnutsay 
+# cowsay for pnut.io by @ericd
+
+POSITIONAL=()
+while [[ $# -gt 0 ]]
+do
+key="$1"
+
+case $key in
+    -i|--install)
+    OPTION="i"
+    shift
+    shift
+    ;;
+    -p|--pnutprinter)
+    OPTION="p"
+    PTEXT="$2"
+    shift
+    shift
+    ;;
+    *)
+    IGNORED+=("$1")
+    shift
+    ;;
+esac
+done
+set -- "${IGNORED[@]}"
+
+case $OPTION in
+	"i")
+	OUTPUT=$(cowsay -l | grep ':' | cut -c 14- | sed 's/.$/\//')
+	if [ -d "${OUTPUT}" ] ; then
+		COPIED=$(cp ./pnut.cow "${OUTPUT}")
+		if [ -f "${OUTPUT}pnut.cow" ] ; then
+			echo "The pnut.cow file has been copied!"
+			INSTALLED=$(cp ./pnutsay /usr/local/bin/)
+			if [ -f "/usr/local/bin/pnutsay" ] ; then
+				echo "pnutsay has been installed!"
+				echo "If you have bash, please do 'source ~/.bashrc' on Linux"
+				echo "or 'source ~/.bash_profile' on Mac."
+				echo "If you have ZSH please do 'source ~/.zshrc'."
+				echo "You can now delete the two downloaded files"
+				echo "and directly use the 'pnutsay' command."
+			else
+				echo "You can now either use './pnutsay' directly "
+				echo "or copy 'pnutsay' to '/usr/local/bin' or equivalent"
+				echo "to make it available globally."
+			fi
+		else
+			echo "Error: could not copy pnut.cow to cowsay's cows folder"
+			echo "${COPIED}"
+		fi
+	else
+		echo "Error: could not access cowsay's cows folder"
+		echo "Please install cowsay if necessary, then run this script again or"
+		echo "copy pnut.cow manually (find the cows folder with 'cowsay -l')"
+	fi
+	;;
+	"p")
+	# pnutprinter pnutsay
+	STR=$'\n\n#pnutprinter*'
+	BASE=$(cowsay -f pnut -W16 "${PTEXT}")
+	(echo "${BASE}${STR}")
+	;;
+	*)
+	# normal pnutsay
+	(cowsay -f pnut -W16 "$1")
+	;;
+esac
+
+
+
+
+
+

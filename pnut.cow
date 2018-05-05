@@ -1,0 +1,11 @@
+##
+## Small cow for Pnut.io
+## eric@aya.io
+##
+$eyes = ".." unless ($eyes);
+$the_cow = <<EOC;
+ $thoughts   ,__,
+  $thoughts  ($eyes)____
+     (__)    )\\
+      $tongue||--|| *
+EOC
