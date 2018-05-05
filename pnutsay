@@ -2,6 +2,8 @@
 # pnutsay 
 # cowsay for pnut.io by @ericd
 
+# Using two case/esac occurences is not ideal. There's probably a better way. Please fork and improve. ;)
+
 POSITIONAL=()
 while [[ $# -gt 0 ]]
 do
@@ -27,6 +29,8 @@ esac
 done
 set -- "${IGNORED[@]}"
 
+# Yes, it's a script with an option to install itself. Whatever. Please fork and improve. ;)
+
 case $OPTION in
 	"i")
 	OUTPUT=$(cowsay -l | grep ':' | cut -c 14- | sed 's/.$/\//')
@@ -40,8 +44,8 @@ case $OPTION in
 				echo "If you have bash, please do 'source ~/.bashrc' on Linux"
 				echo "or 'source ~/.bash_profile' on Mac."
 				echo "If you have ZSH please do 'source ~/.zshrc'."
-				echo "You can now delete the two downloaded files"
-				echo "and directly use the 'pnutsay' command."
+				echo "You can then directly use the 'pnutsay' command."
+				echo "Example: 'pnutsay Hello pnut :)'"
 			else
 				echo "You can now either use './pnutsay' directly "
 				echo "or copy 'pnutsay' to '/usr/local/bin' or equivalent"
@@ -53,8 +57,8 @@ case $OPTION in
 		fi
 	else
 		echo "Error: could not access cowsay's cows folder"
-		echo "Please install cowsay if necessary, then run this script again or"
-		echo "copy pnut.cow manually (find the cows folder with 'cowsay -l')"
+		echo "Please install cowsay if necessary, then run this script again"
+		echo "or copy pnut.cow manually (find the cows folder with 'cowsay -l')"
 	fi
 	;;
 	"p")
