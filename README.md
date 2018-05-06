@@ -22,13 +22,21 @@ If nothing works, you'll have to install cowsay, copy the pnut.cow file in cowsa
 
     pnutsay -p Hello pnut :)
 
-### Tricks
+## Tricks
+
+### Copy to clipboard
 
 On a Mac, add " | pbcopy" at the end of the command to send the result to the clipboard.
 
     pnutsay -p Hello pnut :) | pbcopy
 
 Some applications add a space character at the end of the text when pasted, please remember to remove it before posting for pnutprinter. The last character has to be the asterisk.
+
+### Send to Apero
+
+If [Apero](https://itunes.apple.com/us/app/apero/id1219902108?l=fr&ls=1&mt=12) is running, send directly the pnutsay content to a new post with this command:
+
+    open "apero://post=$(pnutsay Hello from Apero and pnutsay)"
 
 ## Screenshot
 
