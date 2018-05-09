@@ -24,7 +24,7 @@ If nothing works, you'll have to install cowsay, copy the pnut.cow file in cowsa
 
     pnutsay -p Hello pnut :)
 
-*Note that also due to bugs, you __can__ pass other arguments to the pnutprinter pnutsay (but they have to be set after the text, not before). Example: `pnutsay -p "These pnuts are salty..." -s`*
+*Note that also due to bugs, you __can__ pass other arguments to the pnutprinter pnutsay. Example: `pnutsay -p "These pnuts are salty..." -s`*
 
 ## Tricks
 
