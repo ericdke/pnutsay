@@ -64,7 +64,7 @@ case $OPTION in
 	"p")
 	# pnutprinter pnutsay
 	STR=$'\n\n#pnutprinter*'
-	BASE=$(cowsay -f pnut -W16 "${PTEXT}")
+	BASE=$(cowsay ${IGNORED} -f pnut -W16 "${PTEXT}")
 	(echo "${BASE}${STR}")
 	;;
 	*)

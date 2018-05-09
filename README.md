@@ -18,9 +18,13 @@ If nothing works, you'll have to install cowsay, copy the pnut.cow file in cowsa
 
     pnutsay Hello pnut :)
 
+*Note that due to bugs, you can't pass other arguments to the classic pnutsay, only words to be used in the cow's bubble.*
+
 ### Dedicated to pnutprinter
 
     pnutsay -p Hello pnut :)
+
+*Note that also due to bugs, you __can__ pass other arguments to the pnutprinter pnutsay (but they have to be set after the text, not before). Example: `pnutsay -p "These pnuts are salty..." -s`*
 
 ## Tricks
 
